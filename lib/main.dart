@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
+import 'package:meuapp_a/pagina_inicial.dart';
 
 
 void main() {
@@ -13,33 +16,10 @@ class MeuApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: PaginaInicial(),
+      debugShowCheckedModeBanner: false,
     );
     
   }
 }
 
 
-class PaginaInicial extends StatelessWidget {
-  const PaginaInicial({super.key});
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Meu App"),
-        backgroundColor: Color.fromARGB(255, 239, 46, 152),
-      ),
-      body: Container(
-        alignment: Alignment.center,
-        color: Color.fromARGB(255, 248, 225, 243),
-        child: ElevatedButton(
-          onPressed: () {},
-          child: Text("CLIQUE AQUI!", style: TextStyle(fontSize: 15),),
-          
-          
-        ),
-      ),
-    );
-  }
-}
