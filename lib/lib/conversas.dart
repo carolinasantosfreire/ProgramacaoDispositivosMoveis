@@ -20,10 +20,10 @@ class Conversas extends StatelessWidget {
           ListTile(
             title: Text("Izaa💙"),
             subtitle: Text("Amiga, vai hoje para o IF??"),
-            leading: CircleAvatar(
+           leading: CircleAvatar(
               backgroundImage: NetworkImage("https://images.unsplash.com/photo-1554147687-e471aee1ff5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"),
             ),
-            trailing: Text("10:35"),
+           trailing: Text("10:35"),
           ),
           ListTile(
             title: Text("Grupo da Família"),
