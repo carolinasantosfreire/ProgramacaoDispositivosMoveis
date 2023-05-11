@@ -11,7 +11,13 @@ class Conversas extends StatelessWidget {
         children: [
           ListTile(
             title: Text("Bella Ramsey❤️"),
-            subtitle: Text("Hii, baby💗"),
+            subtitle: Row(
+              children: [
+                Icon(Icons.done_all, color: Color.fromARGB(255, 74, 174, 204), size: 18,),
+                SizedBox(width: 4,),
+                Text("Hii, baby💗"),
+              ],
+            ),
             leading: CircleAvatar(
               backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAoD900rlP_dWKQ0g7pDm75iakIAsfBrcf_A&usqp=CAU"),
             ),
@@ -19,11 +25,17 @@ class Conversas extends StatelessWidget {
           ),
           ListTile(
             title: Text("Izaa💙"),
-            subtitle: Text("Amiga, vai hoje para o IF??"),
-           leading: CircleAvatar(
+            subtitle: Row(
+              children: [
+                Icon(Icons.done_all, color: Color.fromARGB(255, 152, 159, 161), size: 18,),
+                SizedBox(width: 4,),
+                Text("Amiga, vai hoje para o IF??"),
+              ],
+            ), 
+            leading: CircleAvatar(
               backgroundImage: NetworkImage("https://images.unsplash.com/photo-1554147687-e471aee1ff5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"),
             ),
-           trailing: Text("10:35"),
+            trailing: Text("10:35"),
           ),
           ListTile(
             title: Text("Grupo da Família"),
