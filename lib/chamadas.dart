@@ -44,6 +44,31 @@ class Chamadas extends StatelessWidget {
             color: Color.fromARGB(255, 52, 143, 60),
           ),
         ),
+
+        ListTile(
+          title: Text("Maria Luysa💕"),
+          subtitle: Row(
+            children: [
+              Icon(
+                Icons.call_received,
+                color: Color.fromARGB(255, 204, 74, 74),
+                size: 18,
+              ),
+              SizedBox(
+                width: 4,
+              ),
+              Text("Hoje 10:35"),
+            ],
+          ),
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"),
+          ),
+          trailing: Icon(
+            Icons.videocam,
+            color: Color.fromARGB(255, 52, 143, 60),
+          ),
+        ),
       ],
     );
   }

@@ -11,14 +11,14 @@ class PaginaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 3, //3 abas
       child: Scaffold(
         appBar: AppBar(
           title: Text("WhatsApp"),
           backgroundColor: Color.fromARGB(255, 54, 82, 58),
           bottom: TabBar(
             tabs: [
-              Tab(text: "Conversas"),
+              Tab(text: "Conversas"), // instanciação de classes existentes
               Tab(text: "Status"),
               Tab(text: "Chamadas"),
             ],
@@ -33,7 +33,9 @@ class PaginaInicial extends StatelessWidget {
               icon: Icon(Icons.search),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/config');
+              },
               icon: Icon(Icons.more_vert),
             ),
           ],
