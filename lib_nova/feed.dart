@@ -15,7 +15,7 @@ class Feed extends StatelessWidget {
               width: 7,
             ),
             CircleAvatar(
-              radius: 30,
+              radius: 28,
               backgroundImage: NetworkImage(
                   "https://pps.whatsapp.net/v/t61.24694-24/177013503_169251522553632_338152425579825773_n.jpg?ccb=11-4&oh=01_AdQ5yfKCY35dIUQ6Crq5qlG8CCpujecZ7uRt4xd7pbsiNg&oe=6494F934"),
             ),
@@ -23,7 +23,7 @@ class Feed extends StatelessWidget {
               width: 7,
             ),
             CircleAvatar(
-              radius: 30,
+              radius: 28,
               backgroundImage: NetworkImage(
                   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCSXFImP7GeYSSMR6brT3YjI8jbcAcIsxJTFHBZ_B_FaEDjbB1-YYQNRanCic5qngaRkw&usqp=CAU"),
             ),
@@ -31,7 +31,7 @@ class Feed extends StatelessWidget {
               width: 7,
             ),
             CircleAvatar(
-              radius: 30,
+              radius: 28,
               backgroundImage: NetworkImage(
                   "https://pps.whatsapp.net/v/t61.24694-24/340385325_590910916311182_7128467740106241867_n.jpg?ccb=11-4&oh=01_AdRsyHE6udycCshmiH-VKvMPEoaRGQCIZ2RXBwQopfsVBw&oe=6495059B"),
             ),
@@ -39,7 +39,7 @@ class Feed extends StatelessWidget {
               width: 7,
             ),
             CircleAvatar(
-              radius: 30,
+              radius: 28,
               backgroundImage: NetworkImage(
                   "https://pps.whatsapp.net/v/t61.24694-24/349324031_1439305526834647_8746500057542931803_n.jpg?ccb=11-4&oh=01_AdR0lo2zcSJhv5noP1hF_nPFcBGKfbUoelHOOBrJ785TyQ&oe=6494C38B"),
             ),
@@ -47,7 +47,7 @@ class Feed extends StatelessWidget {
               width: 7,
             ),
             CircleAvatar(
-             radius: 30,
+             radius: 28,
               backgroundImage: NetworkImage(
                   "https://pps.whatsapp.net/v/t61.24694-24/352430381_3184828888482727_6608720557581121625_n.jpg?ccb=11-4&oh=01_AdTPruYqgGP37D92zketIYYHgcQNwu9F0DMK-suMuTMatA&oe=6494D1FE"),
             ),
@@ -55,7 +55,7 @@ class Feed extends StatelessWidget {
               width: 7,
             ),
             CircleAvatar(
-              radius: 30,
+              radius: 28,
               backgroundImage: NetworkImage(
                   "https://pps.whatsapp.net/v/t61.24694-24/341795748_641690631105350_2918919550484817860_n.jpg?ccb=11-4&oh=01_AdTfcYTkPXx5FCVBj80BdTyeXh094Jq__MsaBt6OikepqQ&oe=6494D19F"),
             ),
