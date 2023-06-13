@@ -1,9 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:meuapp_a/chamadas.dart';
-import 'package:meuapp_a/conversas.dart';
-import 'package:meuapp_a/status.dart';
+import 'feed.dart';
+import 'mensagens.dart';
 
 class PaginaInicial extends StatelessWidget {
   const PaginaInicial({super.key});
@@ -18,13 +17,7 @@ class PaginaInicial extends StatelessWidget {
           backgroundColor: Color.fromARGB(255, 255, 255, 255),
           foregroundColor: Colors.black,
           elevation: 0,
-          // bottom: TabBar(
-          //   tabs: [
-          //     Tab(text: "Conversas"), // instanciação de classes existentes
-          //     Tab(text: "Status"),
-          //     Tab(text: "Chamadas"),
-          //   ],
-          // ),
+          
           actions: [
             IconButton(
               onPressed: () {},
@@ -32,13 +25,13 @@ class PaginaInicial extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-                 Navigator.pushNamed(context, '/config');
+                 Navigator.pushNamed(context, '/notificacoes');
               },
               icon: Icon(Icons.favorite_border_outlined),
             ),
             IconButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/config');
+                Navigator.pushNamed(context, '/mensagens');
               },
               icon: Icon(Icons.send),
             ),
@@ -46,9 +39,9 @@ class PaginaInicial extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            Conversas(),
-            Status(),
-            Chamadas(),
+            Feed(),
+            Mensagens(),
+           
           ],
         ),
       ),

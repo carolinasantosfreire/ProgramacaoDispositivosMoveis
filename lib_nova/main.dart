@@ -1,8 +1,9 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:meuapp_a/pagina_inicial.dart';
-import 'configuracoes.dart';
+import 'pagina_inicial.dart';
+import 'notificacoes.dart';
+import 'mensagens.dart';
 
 void main() {
   runApp(MeuApp());
@@ -18,7 +19,8 @@ class MeuApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => PaginaInicial(),
-        '/config':(context) => Configuracoes(),
+        '/notificacoes':(context) => Notificacoes(),
+        '/mensagens':(context) => Mensagens(),
       },
     );
     
