@@ -1,5 +1,5 @@
 
-// ignore_for_file: prefer_const_constructors, avoid_print
+// ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
 
@@ -13,39 +13,130 @@ class PaginaInicial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Home(),
+      routes: {
+        '/':(context) => Home(),
+        '/contador': (context) => Contador(),
+        '/cutir': (context) => Curtir(),
+      },
     );
   }
 }
-//criar nova classe com stl
+
+class Curtir extends StatelessWidget {
+  const Curtir({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Curtir ❤️"),
+        backgroundColor: Color.fromARGB(255, 150, 67, 104),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            IconButton(
+              iconSize: 40,
+              icon: Icon(Icons.favorite_outline),
+              onPressed: () {},
+            ),
+          ]
+        ),
+      ),
+    );
+  }
+}
 
 class Home extends StatelessWidget {
   const Home({super.key});
 
   @override
   Widget build(BuildContext context) {
-    String x = "100";
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Home 🏡"),
+        backgroundColor: Color.fromARGB(255, 236, 134, 241),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: Icon(Icons.calculate, size: 36, color: Color.fromARGB(255, 124, 175, 241),),
+            title: Text("Contador"),
+            subtitle: Text("Exemplo de Incremento e descremento"),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.pushNamed(context, '/contador');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.favorite, size: 36, color: Color.fromARGB(255, 236, 46, 46),),
+            title: Text("Curtir"),
+            subtitle: Text("Exemplo de Curtir e Descurtir"),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.pushNamed(context, '/cutir');
+            },
+          ),
+
+        ],
+      ),
+    );
+  }
+}
+//criar nova classe com stl
+
+class Contador extends StatefulWidget {
+  const Contador({super.key});
+
+  @override
+  State<Contador> createState() => _ContadorState();
+}
+
+class _ContadorState extends State<Contador> {
+  int x = 100;
+  @override
+  Widget build(BuildContext context) {
+  
     
     return Scaffold(
       appBar: AppBar(
-        title: Text("Meu App💫"),
+        title: Text("Contador 🧮"),
+        backgroundColor: Color.fromARGB(255, 104, 180, 242),
       ),
       body: Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(x),
+          Text(x.toString()),
           ElevatedButton(
             onPressed:(){
               //pergunta de prova: dois tipos de widgets: 1-statelesswidget e 2-statefulwidget
-              //Ao precionar
-              print("Antes de zerar");
-              print(x);
-              x = "0";
-              print("Depois de zerar");
-              print(x);
+              //Ao precionar o botão
+              setState(() {
+               x = x + 1;
+                
+              });
             },
-            child: Text("Zerar"),
+            child: Text("Incrementar"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.red,
+            ),
+          ),
+
+          ElevatedButton(
+            onPressed:(){
+              //pergunta de prova: dois tipos de widgets: 1-statelesswidget e 2-statefulwidget
+              //Ao precionar o botão
+              setState(() {
+                 x = x - 1;
+                
+              });
+            },
+            child: Text("Decrementar"),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color.fromARGB(255, 79, 54, 244),
+            ),
           ),
         ],
       ),
