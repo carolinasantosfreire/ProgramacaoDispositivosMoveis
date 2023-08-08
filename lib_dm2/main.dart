@@ -22,14 +22,23 @@ class PaginaInicial extends StatelessWidget {
   }
 }
 
-class Curtir extends StatelessWidget {
+class Curtir extends StatefulWidget {
   const Curtir({super.key});
+  @override
+  State<Curtir> createState() => _CurtirState();
+}
+
+class _CurtirState extends State<Curtir> {
+  
+  // variavel declarada que vai controlar o estado
+  bool curtiu = false;
+  int y = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Curtir ❤️"),
+        title: Text("Curtir 💗"),
         backgroundColor: Color.fromARGB(255, 150, 67, 104),
       ),
       body: Center(
@@ -37,11 +46,25 @@ class Curtir extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             IconButton(
-              iconSize: 40,
-              icon: Icon(Icons.favorite_outline),
-              onPressed: () {},
+              iconSize: 50,
+
+              // icon: Icon(Icons.favorite_outline, color: curtiu == true ? Colors.pink : Colors.black,),
+              //  icon: Icon(curtiu == false ? Icons.favorite_outline : Icons.favorite, color: Colors.pink,),
+               icon: curtiu == true
+              ? Icon(Icons.favorite, color: Colors.pink,)
+              : Icon(Icons.favorite_outline, color: Colors.black,),
+              onPressed: () {
+                setState(() {
+                  curtiu = true;
+
+                });
+                setState(() {
+                  y = y+1;
+                });
+              },
             ),
-          ]
+            Text("Curtidas $y"),
+          ],
         ),
       ),
     );
