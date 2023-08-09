@@ -17,10 +17,26 @@ class PaginaInicial extends StatelessWidget {
         '/':(context) => Home(),
         '/contador': (context) => Contador(),
         '/cutir': (context) => Curtir(),
+        '/cadastro':(context) => Cadastro(),
       },
     );
   }
 }
+
+class Cadastro extends StatelessWidget {
+  const Cadastro({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text("Cadastro 👌"),
+        backgroundColor: Color.fromARGB(255, 67, 150, 113),
+      ),
+    );
+  }
+}
+
 
 class Curtir extends StatefulWidget {
   const Curtir({super.key});
@@ -99,6 +115,15 @@ class Home extends StatelessWidget {
             trailing: Icon(Icons.chevron_right),
             onTap: () {
               Navigator.pushNamed(context, '/cutir');
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.person, size: 36, color: Color.fromARGB(255, 59, 161, 141),),
+            title: Text("Cadastro 👌"),
+            subtitle: Text("Exemplo de Cadastro"),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () {
+               Navigator.pushNamed(context, '/cadastro');
             },
           ),
 
