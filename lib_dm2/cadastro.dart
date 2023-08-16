@@ -18,16 +18,55 @@ class Cadastro extends StatelessWidget {
         children: [
           TextFormField(
             decoration: InputDecoration( 
-              icon: Icon(Icons.email_outlined),
-              hintText: "Informe seu e-mail.",
+              prefixIcon: Icon(Icons.person),
+              label: Text("Informe seu nome."),
+              border: OutlineInputBorder(
+                
+              ),
             ),
           ),
+
+           SizedBox(height: 20),
+
           TextFormField(
             decoration: InputDecoration( 
-              icon: Icon(Icons.lock_open),
-              hintText: "Informe sua senha.",
+              prefixIcon: Icon(Icons.email_outlined),
+              label: Text("Informe seu e-mail."),
+              border: OutlineInputBorder(
+                
+              ),
             ),
           ),
+
+          SizedBox(height: 20),
+
+          TextFormField(
+            decoration: InputDecoration( 
+              prefixIcon: Icon(Icons.lock_open),
+             label: Text("Informe sua senha."),
+              border: OutlineInputBorder(),
+            ),
+          ),
+
+           SizedBox(height: 20), 
+
+          TextFormField(
+            decoration: InputDecoration( 
+              prefixIcon: Icon(Icons.calendar_month),
+             label: Text("Informe sua data de nascimento."),
+              border: OutlineInputBorder(),
+            ),
+            onTap: () {
+              showDatePicker(
+                context: context, 
+                initialDate: DateTime.now(), 
+                firstDate: DateTime(1900,1,1), 
+                lastDate: DateTime.now(),
+              );
+            },
+          ),
+
+          
           
           SizedBox(height: 30,),
           ElevatedButton(
