@@ -3,8 +3,17 @@
 import 'package:flutter/material.dart';
 
 
-class Cadastro extends StatelessWidget {
+class Cadastro extends StatefulWidget {
   const Cadastro({super.key});
+
+  @override
+  State<Cadastro> createState() => _CadastroState();
+}
+
+class _CadastroState extends State<Cadastro> {
+  var nomeController = TextEditingController();
+  var emailController = TextEditingController();
+  var senhaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +26,7 @@ class Cadastro extends StatelessWidget {
         padding: EdgeInsets.all(30),
         children: [
           TextFormField(
+            controller: nomeController,
             decoration: InputDecoration( 
               prefixIcon: Icon(Icons.person),
               label: Text("Informe seu nome."),
@@ -29,6 +39,7 @@ class Cadastro extends StatelessWidget {
            SizedBox(height: 20),
 
           TextFormField(
+            controller: emailController,
             decoration: InputDecoration( 
               prefixIcon: Icon(Icons.email_outlined),
               label: Text("Informe seu e-mail."),
@@ -41,6 +52,7 @@ class Cadastro extends StatelessWidget {
           SizedBox(height: 20),
 
           TextFormField(
+            controller: senhaController,
             decoration: InputDecoration( 
               prefixIcon: Icon(Icons.lock_open),
              label: Text("Informe sua senha."),
@@ -70,7 +82,12 @@ class Cadastro extends StatelessWidget {
           
           SizedBox(height: 30,),
           ElevatedButton(
-            onPressed: (){}, 
+            onPressed: (){
+              print("O botão Salvar foi clicado");
+              print(nomeController.text);
+              print(emailController);
+              print(senhaController);
+            }, 
             child: Text("Salvar"),
             style: ElevatedButton.styleFrom(
               backgroundColor: Color.fromARGB(255, 97, 170, 243),
