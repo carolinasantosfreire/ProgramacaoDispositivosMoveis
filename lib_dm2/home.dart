@@ -41,6 +41,15 @@ class Home extends StatelessWidget {
                Navigator.pushNamed(context, '/cadastro');
             },
           ),
+          ListTile(
+            leading: Icon(Icons.account_circle, size: 36, color: Color.fromARGB(255, 103, 59, 161),),
+            title: Text("Login"),
+            subtitle: Text("Exemplo de Login"),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () {
+               Navigator.pushNamed(context, '/login');
+            },
+          ),
 
         ],
       ),
