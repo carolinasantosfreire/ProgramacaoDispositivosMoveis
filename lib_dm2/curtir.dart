@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, avoid_print, prefer_const_literals_to_create_immutables, sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Curtir extends StatefulWidget {
   const Curtir({super.key});
@@ -11,11 +12,30 @@ class Curtir extends StatefulWidget {
 class _CurtirState extends State<Curtir> {
   
   // variavel declarada que vai controlar o estado
-  bool curtiu = false;
-  int y = 0;
+  // int y = 0;
+ bool curtiu = false;
 
   @override
-  Widget build(BuildContext context) {
+    void initState() { //roda na hr que a tela abre
+    super.initState();
+    obtemLike(); //primeira chamada
+  }
+
+  void obtemLike () async{
+
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      curtiu = prefs.getBool('teste') ?? false;
+   });
+  }
+
+  void salvaValor (bool valor) async{
+    final prefs = await SharedPreferences.getInstance();
+    prefs.setBool('teste', valor);
+  }
+
+
+  Widget build (BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Curtir 💗"),
@@ -27,7 +47,6 @@ class _CurtirState extends State<Curtir> {
           children: [
             IconButton(
               iconSize: 50,
-
               // icon: Icon(Icons.favorite_outline, color: curtiu == true ? Colors.pink : Colors.black,),
               //  icon: Icon(curtiu == false ? Icons.favorite_outline : Icons.favorite, color: Colors.pink,),
                icon: curtiu == true
@@ -36,14 +55,14 @@ class _CurtirState extends State<Curtir> {
               onPressed: () {
                 setState(() {
                   curtiu = true;
-
                 });
-                setState(() {
-                  y = y+1;
-                });
+                // setState(() {
+                //   y = y+1;
+                // });
+                salvaValor(curtiu);
               },
             ),
-            Text("Curtidas $y"),
+            // Text("Curtidas $y"),
           ],
         ),
       ),
